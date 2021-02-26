@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/CMPSC185_react/static/css/main.b9fbd9a5.chunk.css",
+    "main.js": "/CMPSC185_react/static/js/main.a5696a65.chunk.js",
+    "main.js.map": "/CMPSC185_react/static/js/main.a5696a65.chunk.js.map",
+    "runtime-main.js": "/CMPSC185_react/static/js/runtime-main.c48574a5.js",
+    "runtime-main.js.map": "/CMPSC185_react/static/js/runtime-main.c48574a5.js.map",
+    "static/js/2.77f8371e.chunk.js": "/CMPSC185_react/static/js/2.77f8371e.chunk.js",
+    "static/js/2.77f8371e.chunk.js.map": "/CMPSC185_react/static/js/2.77f8371e.chunk.js.map",
+    "static/js/3.60fdcbe0.chunk.js": "/CMPSC185_react/static/js/3.60fdcbe0.chunk.js",
+    "static/js/3.60fdcbe0.chunk.js.map": "/CMPSC185_react/static/js/3.60fdcbe0.chunk.js.map",
+    "index.html": "/CMPSC185_react/index.html",
+    "static/css/main.b9fbd9a5.chunk.css.map": "/CMPSC185_react/static/css/main.b9fbd9a5.chunk.css.map",
+    "static/js/2.77f8371e.chunk.js.LICENSE.txt": "/CMPSC185_react/static/js/2.77f8371e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c48574a5.js",
+    "static/js/2.77f8371e.chunk.js",
+    "static/css/main.b9fbd9a5.chunk.css",
+    "static/js/main.a5696a65.chunk.js"
+  ]
+}
