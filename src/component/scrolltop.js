@@ -1,3 +1,6 @@
+// referenced https://stackoverflow.com/questions/29725828/update-style-of-a-component-onscroll-in-react-js
+// for using ComponentDidMount and ComponentWillUnmount for window onScroll event
+
 import {Component} from 'react';
 
 class ScrollTopButton extends Component {
