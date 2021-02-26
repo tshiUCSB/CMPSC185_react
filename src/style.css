@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400&display=swap');
+
+:root {
+	--accent-color: #d71343;
+}
+
+body, html {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	scroll-behavior: smooth;
+	margin: 0;
+	font-family: 'Chakra Petch', sans-serif;
+}
+
+section {
+	margin: 48px;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.width-screen {
+	width: 100vw;
+}
+
+.width-100 {
+	width: 100%;
+}
+
+.width-max-100 {
+	max-width: 100%;
+}
+
+.height-screen {
+	height: 100vh;
+}
+
+.height-100 {
+	height: 100%;
+}
+
+.height-max-100 {
+	max-height: 100%;
+}
+
+.display-flex {
+	display: flex;
+}
+
+.display-grid {
+	display: grid;
+}
+
+.my-10 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.my-24 {
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+.m-auto {
+	margin: auto;
+}
+
+.grid-col-auto {
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.grid-place-center {
+	place-items: center;
+}
+
+.grid-gap-10px {
+	gap: 20px 20px;
+}
+
+.pos-fixed {
+	position: fixed;
+}
+
+.pos-absolute {
+	position: absolute;
+}
+
+.display-none {
+	display: none;
+}
+
+.bottom-24px {
+	bottom: 24px;
+}
+
+.center-center {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.horiz-center {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.bg-black-40 {
+	background-color: rgba(0, 0, 0, .4);
+}
+
+.bg-black-60 {
+	background-color: rgba(0, 0, 0, .6);
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.hover-opacity-60:hover {
+	opacity: .6;
+}
+
+table, th, td {
+	border: solid 1px rgba(0, 0, 0, .7);
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 15px 24px;
+}
+
+button, input {
+	padding: 10px 15px;
+	border-radius: 20px;
+	
+}
+
+button {
+	color: white;
+}
+
+button:active {
+	color: var(--accent-color);
+}
+
+.navbar, button {
+	background-color: rgba(0, 0, 0, .8);
+}
+
+.navbar-item {
+	color: white;
+	display: block;
+	text-decoration: none;
+	padding: 10px 24px;
+}
+
+.navbar-item:hover, button:hover {
+	background-color: rgba(0, 0, 0, .9);
+}
+
+.accent {
+	color: var(--accent-color);
+}
+
+.grid-img, .grid-vid {
+	max-width: 100%;
+	cursor: pointer;
+}
+
+.grid-img:hover, .grid-vid:hover {
+	opacity: .6;
+}
+
+.grid-vid::-webkit-media-controls {
+  display: none;
+}
+
+.overlay-content {
+	max-width: 90%;
+	max-height: 90%;
+	position: absolute;
+	z-index: 500;
+}
+
+
