@@ -5,48 +5,53 @@ import './style.css';
 import TabList from './component/tablist';
 import TabBody from './component/body';
 import ScrollTopButton from './component/scrolltop';
+import Overlay from './component/overlay';
 import {Component} from 'react';
-
-
-// function App() {
-// 	return (
-// 		<div className="App">
-// 			<header className="App-header">
-// 				<img src={logo} className="App-logo" alt="logo" />
-// 				<p>
-// 					Edit <code>src/App.js</code> and save to reload.
-// 				</p>
-// 				<a
-// 					className="App-link"
-// 					href="https://reactjs.org"
-// 					target="_blank"
-// 					rel="noopener noreferrer"
-// 				>
-// 					Learn React
-// 				</a>
-// 			</header>
-// 		</div>
-// 	);
-// }
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			active: 0
+			active: 0,
+			overlay: false,
+			overlay_info: {}
 		};
+
 		this.changeTab = (id) => {
-			console.log(id);
 			this.setState({
-				active: id
+				active: id,
+				overlay: false,
+				overlay_info: {}
 			});
-		}
+		};
+
+		this.toggleOverlay = (state, info) => {
+			this.setState({
+				active: this.state.active,
+				overlay: state,
+				overlay_info: info
+			});
+		};
 	}
 
 	render() {
 		let tabs = ["Text", "Images", "Videos", "Table", "Email"];
+
+		let overlay = [];
+		if (this.state.overlay) {
+			overlay = (
+				<Overlay
+					toggle={this.toggleOverlay} 
+					media={this.state.overlay_info.media} 
+					path={this.state.overlay_info.path} 
+					alt={this.state.overlay_info.alt}
+					type={this.state.overlay_info.type}
+				/>
+			);
+		}
 		return (
 			<div>
+				{overlay}
 				<div className="navbar width-screen display-flex">
 					<TabList 
 						tabs={tabs} 
@@ -56,7 +61,8 @@ class App extends Component {
 				</div>
 				<section>
 					<TabBody 
-						activeTab={this.state.active}
+						activeTab={this.state.active} 
+						overlay={this.toggleOverlay}
 					/>
 				</section>
 				<ScrollTopButton />

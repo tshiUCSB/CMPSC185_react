@@ -7,7 +7,12 @@ class VidBody extends Component {
 			let file_name = `${process.env.PUBLIC_URL}/assets/videos/${i}.${this.props.vid_type}`;
 			let tag_type = `video/${this.props.vid_type}`;
 			let vid_tag = (
-				<video className="grid-vid" key={i} controls>
+				<video 
+					className="grid-vid" 
+					key={i} 
+					controls 
+					onClick={(e) => this.props.overlay(true, {media: "vid", path: e.target.childNodes[0].src, type: e.target.childNodes[0].type})}
+				>
 					<source src={file_name} type={tag_type} />
 				</video>
 			);

@@ -18,7 +18,8 @@ class TabBody extends Component {
 				return (
 					<ImgBody 
 						img_count={count} 
-						img_type={file_type}
+						img_type={file_type} 
+						overlay={this.props.overlay}
 					/>
 				);
 			case 2:
@@ -27,7 +28,8 @@ class TabBody extends Component {
 				return (
 					<VidBody
 						vid_count={count}
-						vid_type={file_type}
+						vid_type={file_type} 
+						overlay={this.props.overlay}
 					/>
 				);
 			case 3:
