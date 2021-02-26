@@ -30,7 +30,7 @@ class EmailBody extends Component {
 	validateEmail(email) {
 		let suffix = email.slice(-4);
 		let at = email.indexOf('@');
-		let validity = at >= 0 && (suffix == ".com" || suffix == ".edu");
+		let validity = at >= 0 && (suffix === ".com" || suffix === ".edu");
 
 		return validity;
 	}

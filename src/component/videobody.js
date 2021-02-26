@@ -5,10 +5,9 @@ class VidBody extends Component {
 		let vid_list = [];
 		for(let i = 0; i < this.props.vid_count; i++) {
 			let file_name = `${process.env.PUBLIC_URL}/assets/videos/${i}.${this.props.vid_type}`;
-			console.log(file_name);
 			let tag_type = `video/${this.props.vid_type}`;
 			let vid_tag = (
-				<video class="grid-vid" controls>
+				<video className="grid-vid" key={i} controls>
 					<source src={file_name} type={tag_type} />
 				</video>
 			);

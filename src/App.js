@@ -4,6 +4,7 @@ import './style.css';
 
 import TabList from './component/tablist';
 import TabBody from './component/body';
+import ScrollTopButton from './component/scrolltop';
 import {Component} from 'react';
 
 
@@ -58,6 +59,7 @@ class App extends Component {
 						activeTab={this.state.active}
 					/>
 				</section>
+				<ScrollTopButton />
 			</div>
 		);
 	}
