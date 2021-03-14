@@ -1,5 +1,4 @@
 import Tasks from './tasks';
-import AddTask from './addtask';
 import WriteTask from './writetask';
 import {useState, useEffect} from 'react';
 
@@ -23,13 +22,6 @@ function MeetingBody() {
 		return data;
 	};
 
-	const fetch_task = async (id) => {
-		const res = await fetch(`http://localhost:5000/tasks/${id}`);
-		const data = await res.json();
-
-		return data;
-	}
-
 	const add_task = async (task) => {
 		const res = await fetch("http://localhost:5000/tasks",
 			{
@@ -42,10 +34,12 @@ function MeetingBody() {
 		);
 		const data = await res.json();
 		set_tasks([...tasks, data]);
+
+		set_create_mtg(false);
 	}
 
 	const update_task = async (upd_task) => {
-		const res = await fetch(`http://localhost:5000/tasks/${upd_task.id}`, 
+		await fetch(`http://localhost:5000/tasks/${upd_task.id}`, 
 			{
 				method: 'PUT',
 				headers: {
@@ -64,7 +58,7 @@ function MeetingBody() {
 	}
 
 	const delete_task = async (id) => {
-		const res = await fetch(`http://localhost:5000/tasks/${id}`,
+		await fetch(`http://localhost:5000/tasks/${id}`,
 			{method: 'DELETE'});
 		set_tasks(tasks.filter((task) => task.id !== id));
 	}

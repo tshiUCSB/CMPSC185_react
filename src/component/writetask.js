@@ -85,8 +85,6 @@ function WriteTask({onSubmit, taskID}) {
 		}
 	}
 
-	console.log([title, day, url, important]);
-
 	return (
 		<form
 			onSubmit={on_submit}
