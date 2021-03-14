@@ -11,7 +11,7 @@ function Task({task, onDelete, onUpdate}) {
 		>
 			<img
 				onClick={() => onDelete(task.id)}
-				className="float-right width-24px"
+				className="float-right width-24px hover-scale-110"
 				src={delete_icon}
 				alt="delete meeting"
 			/>

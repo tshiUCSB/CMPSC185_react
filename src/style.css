@@ -255,6 +255,11 @@ button:hover {
 	opacity: 1;
 }
 
+.hover-scale-110:hover {
+	transition-duration: .3s; 
+	transform: scale(1.1, 1.1);
+}
+
 table, th, td {
 	border: solid 1px rgba(0, 0, 0, .7);
 	border-collapse: collapse;
