@@ -1,10 +1,13 @@
 import Tasks from './tasks';
 import AddTask from './addtask';
+import WriteTask from './writetask';
 import {useState, useEffect} from 'react';
 
 function MeetingBody() {
 	const [tasks, set_tasks] = useState([]);
 	const [create_mtg, set_create_mtg] = useState(false);
+	const [up_task, set_up_task] = useState({});
+	const [last_up_task_id, set_last_up_task_id] = useState(-1);
 
 	useEffect(() => {
 		const get_tasks = async () => {
@@ -41,11 +44,8 @@ function MeetingBody() {
 		set_tasks([...tasks, data]);
 	}
 
-	const update_task = async (id) => {
-		const up_task = await fetch_task(id);
-		const upd_task = {...up_task, important: !up_task.important};
-
-		const res = await fetch(`http://localhost:5000/tasks/${id}`, 
+	const update_task = async (upd_task) => {
+		const res = await fetch(`http://localhost:5000/tasks/${upd_task.id}`, 
 			{
 				method: 'PUT',
 				headers: {
@@ -55,17 +55,26 @@ function MeetingBody() {
 			}
 		);
 
-		const data = await res.json();
 		set_tasks(tasks.map(
-				(task) => task.id === id ? {...task, important: data.important} : task
+				(task) => task.id === upd_task.id ? upd_task : task
 			)
 		)
+
+		set_up_task({});
 	}
 
 	const delete_task = async (id) => {
 		const res = await fetch(`http://localhost:5000/tasks/${id}`,
 			{method: 'DELETE'});
 		set_tasks(tasks.filter((task) => task.id !== id));
+	}
+
+	const req_update = (task) => {
+		set_last_up_task_id(up_task.id);
+		if (up_task.id === task.id)
+			set_up_task({});
+		else
+			set_up_task(task);
 	}
 
 	return (
@@ -79,9 +88,11 @@ function MeetingBody() {
 			</button> 
 
 			{create_mtg ?
-				<AddTask onAdd={add_task} /> : 
-				<Tasks tasks={tasks} onDelete={delete_task} onUpdate={update_task} />
+				<WriteTask onSubmit={add_task} taskID={-1} /> : 
+				<Tasks tasks={tasks} onDelete={delete_task} onUpdate={req_update} />
 			}
+
+			{!create_mtg && up_task.id && up_task.id > 0 && last_up_task_id !== up_task.id ? <WriteTask onSubmit={update_task} taskID={up_task.id} /> : null}
 		</div>
 	);
 }

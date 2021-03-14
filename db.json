@@ -20,6 +20,27 @@
       "title": "Game Night",
       "day": "2021-03-05T23:00",
       "textInfor": "https://ucsb.us/j/8311826784"
+    },
+    {
+      "title": "fighting the twins",
+      "day": "2021-04-10T07:22",
+      "textInfor": "https://zoom.twins.us",
+      "important": false,
+      "id": 4
+    },
+    {
+      "title": "meeting w/ tikko!",
+      "day": "2021-04-10T07:06",
+      "textInfor": "http://zoom.com",
+      "important": true,
+      "id": 5
+    },
+    {
+      "title": "cryogen",
+      "day": "2021-04-03T07:21",
+      "textInfor": "https://zoom.us",
+      "important": false,
+      "id": 6
     }
   ]
 }

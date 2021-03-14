@@ -1,11 +1,12 @@
 import delete_icon from '../icons/delete_icon.png';
 
-function Task({task, onDelete}) {
+function Task({task, onDelete, onUpdate}) {
 	let imp_class = "";
 	if (task.important) imp_class = " border-highlight";
 
 	return (
 		<div 
+			onDoubleClick={(e) => onUpdate(task)}
 			className={"width-90 border-radius-15px bg-black-40 hover-bg-black-60 my-10 p-12 cursor-pointer" + imp_class}
 		>
 			<img

@@ -1,6 +1,11 @@
 import {useState} from 'react';
 
-function AddTask({onAdd}) {
+function WriteTask({onSubmit, taskID}) {
+	// const [title, set_title] = useState(task.title);
+	// const [day, set_day] = useState(task.day);
+	// const [url, set_url] = useState(task.textInfor);
+	// const [important, set_imp] = useState(task.important);
+
 	const [title, set_title] = useState("");
 	const [day, set_day] = useState("");
 	const [url, set_url] = useState("");
@@ -10,7 +15,7 @@ function AddTask({onAdd}) {
 	const [day_err, set_day_err] = useState("Date must be set");
 	const [url_err, set_url_err] = useState("Link cannot be empty");
 
-	const [submit_valid, set_submit_valid] = useState(" opacity-40");
+	const [submit_valid, set_submit_valid] = useState(false);
 
 	const on_submit = (e) => {
 		e.preventDefault();
@@ -18,7 +23,9 @@ function AddTask({onAdd}) {
 		if (title_err !== "" || day_err !== "" || url_err !== "") return;
 		
 		let textInfor = url;
-		onAdd({title, day, textInfor, important});
+		let task = {title, day, textInfor, important};
+		if (taskID > 0) task.id = taskID;
+		onSubmit(task);
 
 		set_title("");
 		set_day("");
@@ -28,12 +35,14 @@ function AddTask({onAdd}) {
 		set_title_err("Title cannot be empty");
 		set_day_err("Date must be set");
 		set_url_err("Link cannot be empty");
+
+		set_submit_valid(false);
 	}
 
 	const check_submit_valid = () => {
 		if (title_err !== "" || day_err !== "" || url_err !== "") 
-			set_submit_valid(" opacity-40");
-		else set_submit_valid(" cursor-pointer");
+			set_submit_valid(false);
+		else set_submit_valid(true);
 	}
 
 	const handle_title_change = (val) => {
@@ -75,6 +84,8 @@ function AddTask({onAdd}) {
 			check_submit_valid();
 		}
 	}
+
+	console.log([title, day, url, important]);
 
 	return (
 		<form
@@ -120,7 +131,7 @@ function AddTask({onAdd}) {
 				<label >Important</label>
 				<input 
 					type="checkbox" 
-					value={important}
+					checked={important}
 					onChange={(e) => set_imp(e.currentTarget.checked)}
 					className="mx-12 cursor-pointer"
 				/>
@@ -129,11 +140,11 @@ function AddTask({onAdd}) {
 			<input 
 				type="submit" 
 				value="Save Meeting" 
-				className={"width-80 bg-color-accent text-white" + submit_valid}
+				className={"width-80 bg-color-accent text-white" + (submit_valid ? " cursor-pointer" : " opacity-40")}
 				onSubmit={on_submit}
 			/>
 		</form>
 	);
 }
 
-export default AddTask;
+export default WriteTask;
