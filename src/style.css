@@ -32,8 +32,32 @@ button:hover {
 	width: 100%;
 }
 
+.width-25 {
+	width: 25%;
+}
+
+.width-60 {
+	width: 60%;
+}
+
+.width-80 {
+	width: 80%;
+}
+
+.width-90 {
+	width: 90%;
+}
+
+.width-24px {
+	width: 24px;
+}
+
 .width-max-100 {
 	max-width: 100%;
+}
+
+.width-min-300px {
+	min-width: 300px;
 }
 
 .height-screen {
@@ -66,8 +90,42 @@ button:hover {
 	margin-bottom: 24px;
 }
 
+.mx-12 {
+	margin-left: 12px;
+	margin-right: 12px;
+}
+
+.m-12 {
+	margin: 12px;
+}
+
+.m-24 {
+	margin: 24px;
+}
+
 .m-auto {
 	margin: auto;
+}
+
+.p-12 {
+	padding: 12px;
+}
+
+.py-12 {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.flex-dir-col {
+	flex-direction: column;
+}
+
+.flex-justify-items {
+	justify-items: center;
+}
+
+.flex-align-items {
+	align-items: center;
 }
 
 .grid-col-auto {
@@ -109,6 +167,16 @@ button:hover {
 	transform: translateX(-50%);
 }
 
+.top-right-corner {
+	top: 0;
+	right: 0;
+}
+
+.bottom-right-corner {
+	bottom: 0;
+	right: 0;
+}
+
 .bg-black-40 {
 	background-color: rgba(0, 0, 0, .4);
 }
@@ -117,16 +185,74 @@ button:hover {
 	background-color: rgba(0, 0, 0, .6);
 }
 
+.hover-bg-black-60:hover {
+	background-color: rgba(0, 0, 0, .6);
+}
+
+.bg-black-70 {
+	background-color: rgba(0, 0, 0, .7);
+}
+
+.bg-color-accent {
+	background-color: var(--accent-color);
+}
+
+.bg-transparent {
+	background-color: transparent;
+}
+
 .cursor-pointer {
 	cursor: pointer;
+}
+
+.text-white {
+	color: white;
 }
 
 .text-align-center {
 	text-align: center;
 }
 
+.text-align-left {
+	text-align: left;
+}
+
+.border-radius-15px {
+	border-radius: 15px;
+}
+
+.border-highlight {
+	border-width: 2px;
+	border-style: solid;
+	border-color: var(--accent-color);
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.opacity-40 {
+	opacity: .4;
+}
+
+.opacity-60 {
+	opacity: .6;
+}
+
+.opacity-80 {
+	opacity: .8;
+}
+
 .hover-opacity-60:hover {
 	opacity: .6;
+}
+
+.hover-opacity-100:hover {
+	opacity: 1;
 }
 
 table, th, td {
@@ -189,6 +315,11 @@ button:active {
 	max-height: 90%;
 	position: absolute;
 	z-index: 500;
+}
+
+.hollow-input {
+	background-color: transparent;
+	border-bottom: 2px solid rgba(255, 255, 255, .6);
 }
 
 

@@ -3,6 +3,7 @@ import ImgBody from './imagebody';
 import VidBody from './videobody';
 import TableBody from './tablebody';
 import EmailBody from './emailbody';
+import MeetingBody from './meetingbody';
 import {Component} from 'react';
 
 class TabBody extends Component {
@@ -38,6 +39,8 @@ class TabBody extends Component {
 				);
 			case 4:
 				return <EmailBody />;
+			case 5:
+				return <MeetingBody />;
 			default:
 				return null;
 		}

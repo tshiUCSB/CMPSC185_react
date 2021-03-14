@@ -35,7 +35,7 @@ class App extends Component {
 	}
 
 	render() {
-		let tabs = ["Text", "Images", "Videos", "Table", "Email"];
+		let tabs = ["Text", "Images", "Videos", "Table", "Email", "Meetings"];
 
 		let overlay = [];
 		if (this.state.overlay) {
